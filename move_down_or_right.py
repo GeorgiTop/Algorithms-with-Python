@@ -1,12 +1,14 @@
-def get_paths(c, r, matrix):
+def get_paths(c, r, rows, cols):
+    if c == cols-1 and r == rows-1:
+        return 1
+    if c > cols-1 or r > rows-1:
+        return 0
     count = 0
-    if c == len(matrix[0])-1 and r == len(matrix)-1:
-        return count
-    if matrix[c+1]
-    
+    count += get_paths(c+1, r, rows, cols)
+    count += get_paths(c, r+1, rows, cols)
+    return count
 
 rows = int(input())
 cols = int(input())
-matrix = [[None] * cols for i in range(rows)]
-get_paths(0, 0, matrix)
-print(len(matrix))
+
+print(get_paths(0, 0, rows, cols))

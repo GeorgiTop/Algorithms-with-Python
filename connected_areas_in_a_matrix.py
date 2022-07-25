@@ -1,3 +1,10 @@
+class Area():
+    def __init__(self, row, col, size):
+        self.row = row
+        self.col = col
+        self.size = size
+
+
 def get_connected_area_size(row, col, rows, cols, matrix, flag):
     if col < 0 \
             or row < 0 \
@@ -28,14 +35,12 @@ for row in range(rows):
         size = get_connected_area_size(row, col, rows, cols, matrix, flag)
         if size == 0:
             continue
-        zones.append([row, col, size])
+        zones.append(Area(row, col, size))
 
 
 print(f'Total areas found: {len(zones)}')
-if len(zones):
-    sorted_zones = sorted(zones, key=lambda a: -a[2])
-    for i, (x, y, n) in enumerate(sorted_zones):
-        print(f'Area #{i+1} at ({x}, {y}) size: {n}')
+for i, area in enumerate(sorted(zones, key=lambda area: area.size, reverse=True)):
+    print(f'Area #{i+1} at ({area.row}, {area.col}) size: {area.size}')
 
 '''
 4
@@ -52,5 +57,10 @@ if len(zones):
 *--*****--
 *--*---*--
 *--*---*--
+
+2
+2
+**
+**
 
 '''

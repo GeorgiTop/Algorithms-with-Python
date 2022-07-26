@@ -8,6 +8,7 @@ def get_paths(c, r, rows, cols):
     count += get_paths(c, r+1, rows, cols)
     return count
 
+
 rows = int(input())
 cols = int(input())
 

@@ -40,7 +40,7 @@ for row in range(rows):
 
 print(f'Total areas found: {len(zones)}')
 for i, area in enumerate(sorted(zones, key=lambda area: area.size, reverse=True)):
-    print(f'Area #{i+1} at ({area.row}, {area.col}) size: {area.size}')
+    print(f'Area #{i+1} at ({area.row}, {area.col}), size: {area.size}')
 
 '''
 4

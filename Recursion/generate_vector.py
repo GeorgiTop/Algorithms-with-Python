@@ -1,6 +1,6 @@
 def generate_vector(idx, arr):
     if idx == len(arr):
-        print(*arr)
+        print(*arr, sep='')
         return
     for n in range(0, 2):
         vector[idx] = n

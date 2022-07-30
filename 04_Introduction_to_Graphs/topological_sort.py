@@ -44,4 +44,5 @@ while dependencies_by_node:
 if has_cycles:
     print('Invalid topological sorting')
 else:    
-    print('Topological sorting:', *sorted_nodes)
+    # print('Topological sorting:', *sorted_nodes)
+    print(f"Topological sorting: {', '.join(sorted_nodes)}")

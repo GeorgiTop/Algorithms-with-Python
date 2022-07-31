@@ -1,7 +1,3 @@
-from cgitb import reset
-from unittest import result
-
-
 def dfs(node, graph, salaries):
     if salaries[node] is not None:
         salaries[node]

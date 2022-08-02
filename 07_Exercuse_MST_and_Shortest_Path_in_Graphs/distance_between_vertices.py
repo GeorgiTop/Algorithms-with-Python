@@ -4,20 +4,20 @@ from collections import deque
 def find_shortest_path(graph, source, destination):
     queue = deque([source])
 
-    visited = [False] * len(graph)
-    visited[source] = True
+    visited = {source}
+    # visited[source] = True
 
-    parent = [None] * len(graph)
+    parent = {source: None}
 
     while queue:
         node = queue.popleft()
         if node == destination:
             break
         for child in graph[node]:
-            if visited[child]:
+            if child in visited:
                 continue
             queue.append(child)
-            visited[child] = True
+            visited.add(child)
             parent[child] = node
 
     return parent
@@ -34,8 +34,8 @@ def find_path_size(destination, parent):
 nodes = int(input())
 pairs = int(input())
 
-graph = []
-[graph.append([]) for _ in range(nodes + 1)]
+graph = {}
+# [graph.append([]) for _ in range(nodes + 1)]
 
 for _ in range(nodes):
     node_str, children_str = input().split(':')
@@ -49,7 +49,7 @@ for _ in range(pairs):
 
 
 
-    if parent[destination] is None:
+    if destination not in parent:
         print(f"{{{source}, {destination}}} -> -1")
         continue
     

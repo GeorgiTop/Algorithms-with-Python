@@ -43,7 +43,7 @@ while not pq.empty():
             parent[child] = node
             pq.put((-new_distance, child))
 
-print(f"Most reliable path reliability: {distance[end_node]:.2f}")
+print(f"Most reliable path reliability: {distance[end_node]:.2f}%")
 path = deque()
 node = end_node
 while node is not None:

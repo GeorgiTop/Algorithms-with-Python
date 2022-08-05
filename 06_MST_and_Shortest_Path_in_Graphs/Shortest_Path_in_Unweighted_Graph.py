@@ -47,5 +47,5 @@ parent = find_parent_by_node(graph, start_node, destination_node)
 path = reconstruct_path(parent, destination_node)
 
 
-print(f'Shortest path length is {len(path)}')
+print(f'Shortest path length is: {len(path)-1}')
 print(*path)

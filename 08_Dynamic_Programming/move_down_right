@@ -27,7 +27,7 @@ cols = cols -1
 result = deque()
 while row > 0 and col > 0:
     result.appendleft([row, col])
-    if dp[row][col-1] > dp[row-1][col]:
+    if dp[row][col-1] >= dp[row-1][col]:
         col -= 1
     else:
         row -= 1
